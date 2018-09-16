@@ -1,9 +1,8 @@
 FROM php:latest
 
-ENV app_name=helloworld
-ENV git_repo=my_great_repo
+ENV app_name=welcome
 
-RUN test -n "$app_name"
-# RUN mkdir /opt/$app_name && git clone $my_git_repo /opt/${app_name}
+RUN test -n "${app_name}"
+RUN mkdir /opt/${app_name} 
 
-# CMD /opt/${app_name}/${app_name}.php
+COPY index.php /opt/${app_name}
